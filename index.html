@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- pendencias do font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" integrity="sha512-sVSECYdnRMezwuq5uAjKQJEcu2wybeAPjU4VJQ9pCRcCY4pIpIw4YMHIOQ0CypfwHRvdSPbH++dA3O4Hihm/LQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" integrity="sha512-tk4nGrLxft4l30r9ETuejLU0a3d7LwMzj0eXjzc16JQj+5U1IeVoCuGLObRDc3+eQMUcEQY1RIDPGvuA7SNQ2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+    <!-- fonts do google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- fonte robot slab -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="font">">
+
+    <style>
+        /* INICIO - arquivo de folha de estilos */
+        
+        /* 
+        VARIAVEIS CSS 
+        ===================================================================
+        */
+        :root {
+            --color-primary: #269fe6;
+            --color-primary-hover: #2086c2;
+            --color-primary-dark: #13141f;
+            --color-primary-dark-hover: #212336;
+            --color-primary-light: #d4ecfa;
+            --color-primary-light-hover: #bdd8e7;
+
+            --color-white: #fff;
+            --color-black: #000;
+
+            --color-dark-text: #444;
+            --color-info-light: #cce5ff;
+            --color-debug-light: #cce5ff;
+            --color-success-light: #d4edda;
+            --color-alert-light: #fff3cd;
+            --color-warning-light: #fff3cd;
+            --color-error-light: #f8d7da;
+
+            --color-info-dark: #4d86c4;
+            --color-debug-dark: #4d86c4;
+            --color-success-dark: #4a9c5d;
+            --color-alert-dark: #927f40;
+            --color-warning-dark: #927f40;
+            --color-error-dark: #da525d;
+
+            --color-gray-0: #f9f9f9;
+            --color-gray-1: #e0e0e0;
+            --color-gray-2: #c7c7c7;
+            --color-gray-3: #aeaeae;
+            --color-gray-4: #959595;
+            --color-gray-5: #7d7d7d;
+            --color-gray-6: #646464;
+            --color-gray-7: #4b4b4b;
+            --color-gray-8: #323232;
+            --color-gray-9: #191919;
+
+            --font-primary: sans-serif;
+            --font-headings: 'Roboto Slab', serif;
+
+            --spacing-gutter-medium: 3rem;
+            --spacing-gutter-large: .5rem;
+        }
+
+
+
+        /* 
+        CSS RESET
+        ===================================================================
+        */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+                font-size: 62.5%;
+            }
+
+        body{
+            font-size: 1.6rem;  
+            font-family: var(--font-primary);
+            background-color: var(--color-gray-1);
+            color: var(--color-dark-text);
+        }
+
+        .container{
+            max-width: 144rem;
+            /* background:var(--color-black); */
+            margin: 0 auto;
+            padding: var(--spacing-gutter-medium)
+        }
+        
+
+        /* 
+        CUSTOMIZAÇÕES DE CABECALHO
+        ===================================================================
+        */
+
+        .main-header-container{
+           background: var(--color-primary-dark)
+        }
+
+        .main-logo {
+            font-size: 4rem;
+            color: var(--color-white);
+            display:flex;
+            flex-flow: nowrap;
+            align-items: center;
+            justify-content:  center;
+            width: fit-content;
+            margin: 0 auto;
+            text-decoration: none;
+        }
+        .main-logo-text{
+            margin-left: 1rem;
+        }
+        .main-logo-icon{
+            margin-right: 2rem;
+        }
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: var(--font-headings) ;
+        }
+
+        /* 
+        CUSTOMIZAÇÕES DO FORM DE PESQUISA
+        ===================================================================
+        */
+
+        .search-form{
+            border: .2rem solid var(--color-primary-dark);
+            max-width: 64rem;
+            margin: 0 auto;
+            border-radius: .4rem;
+            position: relative;
+            min-height: 40px;
+        }
+
+        .search-input,
+        .search-button {
+            border: none;
+            background: none;
+            outline: none;
+            /* padding: .1rem; */
+        }
+
+        .search-input{
+            width: 100%;
+            margin-top: .5rem;
+            margin-left: .5rem;
+            font-size: larger;
+            padding-right: 4rem;
+        }
+
+        .search-button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: .5rem;
+            margin-left: .5rem;
+            margin-right: .5rem;
+            margin-bottom: .5rem;
+
+        }
+
+        .search-form:focus-within,
+        .search-form:focus-within .search-button
+        {
+            border-color: var(--color-primary-hover);
+            color:  var(--color-primary-hover);
+            background-color: var(--color-white);
+        }
+
+       /* 
+        CUSTOMIZAÇÕES CONTEUDO PRINCIPAL (CARDS)
+        ===================================================================
+        */
+
+        .main-content-container{
+            padding-top: 0;
+        }
+
+        .main-content-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+            gap: var(--spacing-gutter-large);
+            /* border: 3px solid red; */
+            transition: all 500ms ease-in-out;
+            
+        }
+
+        .book{
+            background: var(--color-white);
+            font-size: 1.5rem;
+            padding: .5rem;
+            /* border: 3px solid red; */
+            transform: scale(1);
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+            border-radius: .8rem;
+            overflow: hidden;
+        }
+
+        .book-list-item{
+            max-width: 30rem;
+        }
+
+        .book-list-item:hover{
+            transform: scale(1.02);
+            box-shadow: -10px 10px 20px rgba(0, 0, 0, .4);
+        }
+
+        .book img{
+            max-width: 100%;
+        }
+
+        .book-title-container{
+            /* padding: var(--spacing-gutter-medium); */
+            text-align: center;
+        }
+
+
+        .book-footer a{
+            background: var(--color-primary-dark);
+            display: block;
+            color: var(--color-white);
+            text-decoration: none;
+            text-align: center;
+            padding: 2rem var(--spacing-gutter-medium);
+            transition: all 100ms ease-in-out;
+        }
+
+        .book-footer a:hover{
+            filter: brightness(1.5);
+        }
+
+
+        .main-footer{
+           background: var(--color-primary-dark);
+           font-size: 1rem;
+           text-align: center;
+        }
+        
+        /* FIM - arquivo de folha de estilos */
+
+    </style>
+
+    <title>BIB-ON</title>
+</head>
+<body>
+    <!-- INICIO - cabecalho -->
+    <header class="main-header-container">
+        <div class="main-header container">
+            <h1>
+                <a class="main-logo" href="/">
+                    <i class="fas fa-book"></i>
+                    <span class="main-logo-text">BIB-ON</span>
+                    <span class="main-logo-text">Sua biblioteca online</span>
+                </a>
+            </h1>
+        </div>
+    </header>
+    <!-- FIM - cabecalho -->
+    
+    <!-- INICIO - formulario de pesquisa -->
+    <search class="search-container">
+        <div class="container">
+            <form action="#" method="POST" class="search-form">
+                <input type="text" class="search-input" name="search">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </search>
+    <!-- FIM - formulario de pesquisa -->
+
+    <!-- INICIO main (Cards de livros) -->
+    <main class="main-content-container">
+        <div class="main-content main-content-list container">
+        
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->
+        
+        
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->            
+        
+        
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->            
+
+                    
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->
+        
+        
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->            
+        
+        
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->            
+
+                    
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!-- INICIO CARD -->
+            <div class="book book-list-item">
+                <div class="book-cover">
+                    <img src="https://placehold.co/720x1280?text=capalivro\n1280x720" alt="capa do livro">
+                </div>
+
+                <div class="book-title-container">
+                    <h2 class="book-title"> As brumas de avalon</h2>
+                    <h3 class="book-copy"> Copias Disponiveis: 3</h3>
+                </div>                
+
+                <footer class="book-footer">
+                    <a href="#" class="book-read-more button button-dark button-full-width">
+                        <i class="fas fa-eye"></i>
+                        <span>DETALHES</span>
+                    </a>
+                </footer>
+            </div>
+            <!-- FIM CARD -->
+            <!----------------------------------------------------------------------------------------------------------------->
+        </div>
+    </main>
+    <!-- FIM main (Cards de livros) -->
+
+    <!-- INICIO RODAPE -->
+    <footer class="main-footer">        
+        <h1>Todos os direitos reservados a BibOn</h1>
+        <h1>Leia porque faz bem e é legal</h1>
+    </footer>
+    <!-- FIM DO RODAPE -->
+
+</body>
+</html>

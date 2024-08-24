@@ -1,0 +1,26 @@
+{% extends "tlpBase.html" %}
+
+
+{% block conteudo %}
+  <h1>Para Gostar de Ler</h1>
+  <p>
+    Bem vindo a livraria Para gostar de ler
+    <em>Sua livraria online</em>!
+  </p>
+  <h2>Conteudo Gerado dinamicamente</h2>
+  <p>Contagem de dados:</p>
+  <ul>
+    <li><strong>Livros:</strong> {{ numlivros }}</li>
+    <li><strong>Copias:</strong> {{ numcopias }}</li>
+    <li><strong>Generos:</strong> {{ numGeneros }}</li>
+    <li><strong>Editoras:</strong> {{ numEditoras }}</li>
+    <li><strong>Linguas:</strong> {{ numLinguas }}</li>
+    <li><strong>Emprestimos:</strong> {{ numEmprestimos }}</li>
+
+
+  </ul>
+{% endblock %}
+
+{% comment %} se a quantidade de livros apareceu dinamicamente então é o momento de aumentar os dados
+catalogo\templates\tlpindex.html {% endcomment %}
+ 
